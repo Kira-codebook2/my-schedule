@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage with Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #d1f7c4; /* Light green background */
+            background-image: url('file:///mnt/data/192306.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.9;
+        }
+        header {
+            background-color: #87ceeb; /* Light blue */
+            color: white;
+            padding: 10px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 90%;
+            background-color: #ffebf0; /* Light pink */
+            border: 2px solid #000;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #8fbc8f; /* Muted green */
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f0fff0; /* Light pastel green */
+        }
+        tr:hover {
+            background-color: #e6ffe6; /* Slightly darker pastel green */
+        }
+        .task-status {
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            border: none;
+            background-color: #add8e6; /* Light blue */
+        }
+        .task-status.completed {
+            background-color: #90ee90; /* Light green */
+            color: #006400; /* Dark green */
+        }
+        .task-status.not-completed {
+            background-color: #add8e6; /* Light blue */
+            color: #00008b; /* Dark blue */
+        }
+        #reset-button {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background-color: #ffb6c1; /* Light pink */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        #reset-button:hover {
+            background-color: #ff69b4; /* Hot pink */
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.task-status');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if (button.classList.contains('not-completed')) {
+                        button.classList.remove('not-completed');
+                        button.classList.add('completed');
+                        button.textContent = '✔';
+                    } else {
+                        button.classList.remove('completed');
+                        button.classList.add('not-completed');
+                        button.textContent = '!';
+                    }
+                });
+            });
+
+            const resetButton = document.getElementById('reset-button');
+            resetButton.addEventListener('click', () => {
+                buttons.forEach(button => {
+                    button.classList.remove('completed');
+                    button.classList.add('not-completed');
+                    button.textContent = '!';
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>Welcome to My Webpage</header>
+    <button id="reset-button">NEW DAY 🌅</button>
+    <section>
+        <h2>My Daily Timetable</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Activity</th>
+                    <th>Duration</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>6:00 AM – 7:00 AM</td>
+                    <td>🌅 Ground</td>
+                    <td>1 hour</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+                <tr>
+                    <td>7:00 AM – 7:30 AM</td>
+                    <td>🚿 Bath</td>
+                    <td>0.5 hour</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+                <tr>
+                    <td>7:30 AM – 9:30 AM</td>
+                    <td>💻 Coding / Learning coding</td>
+                    <td>2 hours</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+                <tr>
+                    <td>9:30 AM – 10:00 AM</td>
+                    <td>🍳 Breakfast</td>
+                    <td>0.5 hour</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+                <tr>
+                    <td>10:00 AM – 12:00 PM</td>
+                    <td>💻 Daily mini-projects</td>
+                    <td>2 hours</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+                <tr>
+                    <td>12:00 PM – 12:30 PM</td>
+                    <td>☕ Short break</td>
+                    <td>0.5 hour</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+                <tr>
+                    <td>12:30 PM – 1:30 PM</td>
+                    <td>🍴 Lunch and relaxation</td>
+                    <td>1 hour</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+                <tr>
+                    <td>1:30 PM – 3:30 PM</td>
+                    <td>💻 New mini-projects</td>
+                    <td>2 hours</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+                <tr>
+                    <td>3:30 PM – 4:00 PM</td>
+                    <td>🍪 Short break/snack</td>
+                    <td>0.5 hour</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+                <tr>
+                    <td>4:00 PM – 6:00 PM</td>
+                    <td>💻 Coding or skill development</td>
+                    <td>2 hours</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+                <tr>
+                    <td>6:00 PM – 7:30 PM</td>
+                    <td>🍽️ Dinner</td>
+                    <td>1.5 hours</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+                <tr>
+                    <td>7:30 PM – 8:30 PM</td>
+                    <td>🧘‍♂️ Free time</td>
+                    <td>1 hour</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+                <tr>
+                    <td>8:30 PM – 9:30 PM</td>
+                    <td>📖 Review of the day's work</td>
+                    <td>1 hour</td>
+                    <td><button class="task-status not-completed">!</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
