@@ -82,34 +82,6 @@
             background-color: #ff69b4; /* Hot pink */
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('.task-status');
-
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    if (button.classList.contains('not-completed')) {
-                        button.classList.remove('not-completed');
-                        button.classList.add('completed');
-                        button.textContent = '✔';
-                    } else {
-                        button.classList.remove('completed');
-                        button.classList.add('not-completed');
-                        button.textContent = '!';
-                    }
-                });
-            });
-
-            const resetButton = document.getElementById('reset-button');
-            resetButton.addEventListener('click', () => {
-                buttons.forEach(button => {
-                    button.classList.remove('completed');
-                    button.classList.add('not-completed');
-                    button.textContent = '!';
-                });
-            });
-        });
-    </script>
 </head>
 <body>
     <header>Welcome to My Webpage</header>
@@ -130,82 +102,138 @@
                     <td>6:00 AM – 7:00 AM</td>
                     <td>🌅 Ground</td>
                     <td>1 hour</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task1">!</button></td>
                 </tr>
                 <tr>
                     <td>7:00 AM – 7:30 AM</td>
                     <td>🚿 Bath</td>
                     <td>0.5 hour</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task2">!</button></td>
                 </tr>
                 <tr>
                     <td>7:30 AM – 9:30 AM</td>
                     <td>💻 Coding / Learning coding</td>
                     <td>2 hours</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task3">!</button></td>
                 </tr>
                 <tr>
                     <td>9:30 AM – 10:00 AM</td>
                     <td>🍳 Breakfast</td>
                     <td>0.5 hour</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task4">!</button></td>
                 </tr>
                 <tr>
                     <td>10:00 AM – 12:00 PM</td>
                     <td>💻 Daily mini-projects</td>
                     <td>2 hours</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task5">!</button></td>
                 </tr>
                 <tr>
                     <td>12:00 PM – 12:30 PM</td>
                     <td>☕ Short break</td>
                     <td>0.5 hour</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task6">!</button></td>
                 </tr>
                 <tr>
                     <td>12:30 PM – 1:30 PM</td>
                     <td>🍴 Lunch and relaxation</td>
                     <td>1 hour</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task7">!</button></td>
                 </tr>
                 <tr>
                     <td>1:30 PM – 3:30 PM</td>
                     <td>💻 New mini-projects</td>
                     <td>2 hours</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task8">!</button></td>
                 </tr>
                 <tr>
                     <td>3:30 PM – 4:00 PM</td>
                     <td>🍪 Short break/snack</td>
                     <td>0.5 hour</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task9">!</button></td>
                 </tr>
                 <tr>
                     <td>4:00 PM – 6:00 PM</td>
                     <td>💻 Coding or skill development</td>
                     <td>2 hours</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task10">!</button></td>
                 </tr>
                 <tr>
                     <td>6:00 PM – 7:30 PM</td>
                     <td>🍽️ Dinner</td>
                     <td>1.5 hours</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task11">!</button></td>
                 </tr>
                 <tr>
                     <td>7:30 PM – 8:30 PM</td>
                     <td>🧘‍♂️ Free time</td>
                     <td>1 hour</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task12">!</button></td>
                 </tr>
                 <tr>
                     <td>8:30 PM – 9:30 PM</td>
                     <td>📖 Review of the day's work</td>
                     <td>1 hour</td>
-                    <td><button class="task-status not-completed">!</button></td>
+                    <td><button class="task-status not-completed" data-task="task13">!</button></td>
                 </tr>
             </tbody>
         </table>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all task status buttons
+            const buttons = document.querySelectorAll('.task-status');
+
+            // Function to update the button text and class based on stored status
+            function updateTaskStatus() {
+                buttons.forEach(button => {
+                    const taskId = button.getAttribute('data-task');
+                    const status = localStorage.getItem(taskId);
+                    if (status === 'completed') {
+                        button.textContent = '✔';
+                        button.classList.add('completed');
+                        button.classList.remove('not-completed');
+                    } else {
+                        button.textContent = '!';
+                        button.classList.add('not-completed');
+                        button.classList.remove('completed');
+                    }
+                });
+            }
+
+            // Set the initial task status on page load
+            updateTaskStatus();
+
+            // Add click event to toggle status
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const taskId = button.getAttribute('data-task');
+                    if (button.classList.contains('not-completed')) {
+                        button.classList.remove('not-completed');
+                        button.classList.add('completed');
+                        button.textContent = '✔';
+                        localStorage.setItem(taskId, 'completed');
+                    } else {
+                        button.classList.remove('completed');
+                        button.classList.add('not-completed');
+                        button.textContent = '!';
+                        localStorage.setItem(taskId, 'not-completed');
+                    }
+                });
+            });
+
+            // Reset button functionality
+            document.getElementById('reset-button').addEventListener('click', () => {
+                buttons.forEach(button => {
+                    button.classList.remove('completed');
+                    button.classList.add('not-completed');
+                    button.textContent = '!';
+                    const taskId = button.getAttribute('data-task');
+                    localStorage.setItem(taskId, 'not-completed');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
