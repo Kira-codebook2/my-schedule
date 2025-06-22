@@ -1,103 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>🌞 Daily Schedule (6-Month Plan)</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0; padding: 0;
-        background-color: #d1f7c4;
-        background-image: url('file:///mnt/data/192306.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        opacity: 0.95;
-        text-align: center;
-    }
-    header {
-        background-color: #87ceeb;
-        color: white;
-        font-weight: bold;
-        font-size: 28px;
-        padding: 15px 0;
-        margin-bottom: 10px;
-    }
-    h2 {
-        color: #006400;
-    }
-    table {
-        margin: 0 auto 30px auto;
-        border-collapse: collapse;
-        width: 90%;
-        max-width: 700px;
-        background-color: #ffebf0;
-        border: 2px solid #000;
-    }
-    th, td {
-        border: 1px solid #ddd;
-        padding: 12px 10px;
-        font-size: 18px;
-        vertical-align: middle;
-        text-align: left;
-    }
-    th {
-        background-color: #8fbc8f;
-        color: white;
-        text-align: center;
-    }
-    tr:nth-child(even) {
-        background-color: #f0fff0;
-    }
-    tr:hover {
-        background-color: #e6ffe6;
-    }
-    .task-status {
-        cursor: pointer;
-        font-size: 22px;
-        border-radius: 6px;
-        padding: 6px 12px;
-        border: none;
-        background-color: #add8e6;
-        color: #00008b;
-        transition: background-color 0.3s, color 0.3s;
-        user-select: none;
-    }
-    .task-status.completed {
-        background-color: #90ee90;
-        color: #006400;
-    }
-    #reset-button {
-        position: fixed;
-        top: 70px;
-        right: 20px;
-        background-color: #ffb6c1;
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        font-size: 18px;
-        cursor: pointer;
-        border-radius: 5px;
-        z-index: 1000;
-        transition: background-color 0.3s;
-    }
-    #reset-button:hover {
-        background-color: #ff69b4;
-    }
-    caption {
-        font-size: 22px;
-        font-weight: bold;
-        margin-bottom: 12px;
-        color: #006400;
-    }
-</style>
-</head>
-<body>
-
-<header>🌞 Daily Schedule (6-Month Plan)</header>
-<button id="reset-button">NEW DAY 🌅</button>
-
 <section>
     <table>
         <caption>🕖 Morning Routine</caption>
@@ -105,46 +5,13 @@
             <tr><th>Time</th><th>Activity</th><th>Status</th></tr>
         </thead>
         <tbody>
-            <tr>
-                <td>7:00 AM to 7:15 AM</td>
-                <td>Wake up & brush 🪥</td>
-                <td><button class="task-status not-completed" data-task="morning1">!</button></td>
-            </tr>
-            <tr>
-                <td>7:15 AM to 7:45 AM</td>
-                <td>Help mom with work 👩‍👦</td>
-                <td><button class="task-status not-completed" data-task="morning2">!</button></td>
-            </tr>
-            <tr>
-                <td>7:45 AM to 8:15 AM</td>
-                <td>Bath & get dressed 🚿👕</td>
-                <td><button class="task-status not-completed" data-task="morning3">!</button></td>
-            </tr>
-            <tr>
-                <td>8:15 AM to 9:15 AM</td>
-                <td>Python coding (Session 1) 🐍</td>
-                <td><button class="task-status not-completed" data-task="morning4">!</button></td>
-            </tr>
-            <tr>
-                <td>9:15 AM to 9:30 AM</td>
-                <td>Free time / get ready for outside 🏃‍♂️</td>
-                <td><button class="task-status not-completed" data-task="morning5">!</button></td>
-            </tr>
-            <tr>
-                <td>9:30 AM to 9:45 AM</td>
-                <td>Go to shop 🛒</td>
-                <td><button class="task-status not-completed" data-task="morning6">!</button></td>
-            </tr>
-            <tr>
-                <td>9:45 AM to 10:00 AM</td>
-                <td>Cycle to Java class 🚴‍♂️</td>
-                <td><button class="task-status not-completed" data-task="morning7">!</button></td>
-            </tr>
-            <tr>
-                <td>10:00 AM to 12:00 PM</td>
-                <td>Java class ☕</td>
-                <td><button class="task-status not-completed" data-task="morning8">!</button></td>
-            </tr>
+            <tr><td>6:30 – 7:15 AM</td><td>🌄 Wake up + Brush + Bath + Nature Call</td><td><button class="task-status not-completed" data-task="m1">!</button></td></tr>
+            <tr><td>7:15 – 8:15 AM</td><td>🐍 Python Practice (1 concept/script)</td><td><button class="task-status not-completed" data-task="m2">!</button></td></tr>
+            <tr><td>8:15 – 9:00 AM</td><td>🔥 Java Learning (New Concept + Notes)</td><td><button class="task-status not-completed" data-task="m3">!</button></td></tr>
+            <tr><td>9:00 – 9:30 AM</td><td>🍽️ Breakfast</td><td><button class="task-status not-completed" data-task="m4">!</button></td></tr>
+            <tr><td>9:30 – 10:00 AM</td><td>🚶 Travel to Class</td><td><button class="task-status not-completed" data-task="m5">!</button></td></tr>
+            <tr><td>10:00 – 12:00 PM</td><td>🎓 Class Time</td><td><button class="task-status not-completed" data-task="m6">!</button></td></tr>
+            <tr><td>12:00 – 12:30 PM</td><td>🚶 Return Home</td><td><button class="task-status not-completed" data-task="m7">!</button></td></tr>
         </tbody>
     </table>
 
@@ -154,119 +21,24 @@
             <tr><th>Time</th><th>Activity</th><th>Status</th></tr>
         </thead>
         <tbody>
-            <tr>
-                <td>12:00 PM to 12:30 PM</td>
-                <td>Cycle back home 🚴‍♂️</td>
-                <td><button class="task-status not-completed" data-task="afternoon1">!</button></td>
-            </tr>
-            <tr>
-                <td>12:30 PM to 1:00 PM</td>
-                <td>Lunch 🍽️</td>
-                <td><button class="task-status not-completed" data-task="afternoon2">!</button></td>
-            </tr>
-            <tr>
-                <td>1:00 PM to 2:00 PM</td>
-                <td>Rest / Nap 😴</td>
-                <td><button class="task-status not-completed" data-task="afternoon3">!</button></td>
-            </tr>
-            <tr>
-                <td>2:00 PM to 3:00 PM</td>
-                <td>Explain Java to Bujji friend 👧📖</td>
-                <td><button class="task-status not-completed" data-task="afternoon4">!</button></td>
-            </tr>
-            <tr>
-                <td>3:00 PM to 4:30 PM</td>
-                <td>Small rest / chill / snack 📱</td>
-                <td><button class="task-status not-completed" data-task="afternoon5">!</button></td>
-            </tr>
+            <tr><td>12:30 – 1:30 PM</td><td>🍽️ Lunch + Relax</td><td><button class="task-status not-completed" data-task="a1">!</button></td></tr>
+            <tr><td>1:30 – 2:30 PM</td><td>🔁 Java Revision (Programs + Notes)</td><td><button class="task-status not-completed" data-task="a2">!</button></td></tr>
+            <tr><td>2:30 – 2:45 PM</td><td>☕ Small Break</td><td><button class="task-status not-completed" data-task="a3">!</button></td></tr>
+            <tr><td>3:00 – 5:00 PM</td><td>👬 Teach Your Friend (Java/Python)</td><td><button class="task-status not-completed" data-task="a4">!</button></td></tr>
+            <tr><td>5:00 – 6:30 PM</td><td>🛁 Bath + 🍽️ Dinner</td><td><button class="task-status not-completed" data-task="a5">!</button></td></tr>
         </tbody>
     </table>
 
     <table>
-        <caption>🌇 Evening Routine</caption>
+        <caption>🌇 Evening / Night Routine</caption>
         <thead>
             <tr><th>Time</th><th>Activity</th><th>Status</th></tr>
         </thead>
         <tbody>
-            <tr>
-                <td>5:00 PM to 5:45 PM</td>
-                <td>Fill water + water plants 💧🪴</td>
-                <td><button class="task-status not-completed" data-task="evening1">!</button></td>
-            </tr>
-            <tr>
-                <td>5:45 PM to 6:30 PM</td>
-                <td>Bath + Dinner 🛁🍛</td>
-                <td><button class="task-status not-completed" data-task="evening2">!</button></td>
-            </tr>
-            <tr>
-                <td>7:00 PM to 9:30 PM</td>
-                <td>Python coding (Session 2) 🐍🔥</td>
-                <td><button class="task-status not-completed" data-task="evening3">!</button></td>
-            </tr>
-            <tr>
-                <td>9:30 PM to 9:45 PM</td>
-                <td>Movie / fun time 🎬😏</td>
-                <td><button class="task-status not-completed" data-task="evening4">!</button></td>
-            </tr>
-            <tr>
-                <td>10:00 PM</td>
-                <td>Sleep 💤</td>
-                <td><button class="task-status not-completed" data-task="evening5">!</button></td>
-            </tr>
+            <tr><td>6:30 – 7:30 PM</td><td>💼 Job Prep (Apply + Resume + Mock vid)</td><td><button class="task-status not-completed" data-task="e1">!</button></td></tr>
+            <tr><td>7:30 – 8:30 PM</td><td>🧪 Coding Practice (2 problems)</td><td><button class="task-status not-completed" data-task="e2">!</button></td></tr>
+            <tr><td>8:30 – 9:00 PM</td><td>📓 Notes / Flashcards / Resume touch</td><td><button class="task-status not-completed" data-task="e3">!</button></td></tr>
+            <tr><td>9:00 – 10:00 PM</td><td>📱 Free Slot / Chill / Sleep prep</td><td><button class="task-status not-completed" data-task="e4">!</button></td></tr>
         </tbody>
     </table>
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.task-status');
-
-    function updateTaskStatus() {
-        buttons.forEach(button => {
-            const taskId = button.getAttribute('data-task');
-            const status = localStorage.getItem(taskId);
-            if (status === 'completed') {
-                button.textContent = '✔';
-                button.classList.add('completed');
-                button.classList.remove('not-completed');
-            } else {
-                button.textContent = '!';
-                button.classList.add('not-completed');
-                button.classList.remove('completed');
-            }
-        });
-    }
-
-    updateTaskStatus();
-
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const taskId = button.getAttribute('data-task');
-            if (button.classList.contains('not-completed')) {
-                button.classList.remove('not-completed');
-                button.classList.add('completed');
-                button.textContent = '✔';
-                localStorage.setItem(taskId, 'completed');
-            } else {
-                button.classList.remove('completed');
-                button.classList.add('not-completed');
-                button.textContent = '!';
-                localStorage.setItem(taskId, 'not-completed');
-            }
-        });
-    });
-
-    document.getElementById('reset-button').addEventListener('click', () => {
-        buttons.forEach(button => {
-            button.classList.remove('completed');
-            button.classList.add('not-completed');
-            button.textContent = '!';
-            const taskId = button.getAttribute('data-task');
-            localStorage.setItem(taskId, 'not-completed');
-        });
-    });
-});
-</script>
-
-</body>
-</html>
