@@ -9,7 +9,7 @@
         font-family: Arial, sans-serif;
         margin: 0; padding: 0;
         background-color: #d1f7c4;
-        background-image: url('file:///mnt/data/192306.jpg'); /* ✅ Replace if needed */
+        /* Removed background image */
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -101,44 +101,38 @@
 <section>
     <table>
         <caption>🕖 Morning Routine</caption>
-        <thead>
-            <tr><th>Time</th><th>Activity</th><th>Status</th></tr>
-        </thead>
+        <thead><tr><th>Time</th><th>Activity</th><th>Status</th></tr></thead>
         <tbody>
-            <tr><td>6:30 – 7:15 AM</td><td>🌄 Wake up + Brush + Bath + Nature Call</td><td><button class="task-status not-completed" data-task="m1">!</button></td></tr>
-            <tr><td>7:15 – 8:15 AM</td><td>🐍 Python Practice (1 concept/script)</td><td><button class="task-status not-completed" data-task="m2">!</button></td></tr>
-            <tr><td>8:15 – 9:00 AM</td><td>🔥 Java Learning (New Concept + Notes)</td><td><button class="task-status not-completed" data-task="m3">!</button></td></tr>
-            <tr><td>9:00 – 9:30 AM</td><td>🍽️ Breakfast</td><td><button class="task-status not-completed" data-task="m4">!</button></td></tr>
-            <tr><td>9:30 – 10:00 AM</td><td>🚶 Travel to Class</td><td><button class="task-status not-completed" data-task="m5">!</button></td></tr>
-            <tr><td>10:00 – 12:00 PM</td><td>🎓 Class Time</td><td><button class="task-status not-completed" data-task="m6">!</button></td></tr>
-            <tr><td>12:00 – 12:30 PM</td><td>🚶 Return Home</td><td><button class="task-status not-completed" data-task="m7">!</button></td></tr>
+            <tr><td>6:30 – 7:15 AM</td><td>Wake up + Brush + Bath + Nature Call</td><td><button class="task-status" data-task="m1">!</button></td></tr>
+            <tr><td>7:15 – 8:15 AM</td><td>Python Practice (1 concept/script)</td><td><button class="task-status" data-task="m2">!</button></td></tr>
+            <tr><td>8:15 – 9:00 AM</td><td>Java Learning (Concept/Notes)</td><td><button class="task-status" data-task="m3">!</button></td></tr>
+            <tr><td>9:00 – 9:30 AM</td><td>Breakfast</td><td><button class="task-status" data-task="m4">!</button></td></tr>
+            <tr><td>9:30 – 10:00 AM</td><td>Travel to Class</td><td><button class="task-status" data-task="m5">!</button></td></tr>
+            <tr><td>10:00 – 12:00 PM</td><td>Class Time</td><td><button class="task-status" data-task="m6">!</button></td></tr>
+            <tr><td>12:00 – 12:30 PM</td><td>Return Home</td><td><button class="task-status" data-task="m7">!</button></td></tr>
         </tbody>
     </table>
 
     <table>
-        <caption>🌞 Afternoon Routine</caption>
-        <thead>
-            <tr><th>Time</th><th>Activity</th><th>Status</th></tr>
-        </thead>
+        <caption>☀️ Afternoon Routine</caption>
+        <thead><tr><th>Time</th><th>Activity</th><th>Status</th></tr></thead>
         <tbody>
-            <tr><td>12:30 – 1:30 PM</td><td>🍽️ Lunch + Relax</td><td><button class="task-status not-completed" data-task="a1">!</button></td></tr>
-            <tr><td>1:30 – 2:30 PM</td><td>🔁 Java Revision (Programs + Notes)</td><td><button class="task-status not-completed" data-task="a2">!</button></td></tr>
-            <tr><td>2:30 – 2:45 PM</td><td>☕ Small Break</td><td><button class="task-status not-completed" data-task="a3">!</button></td></tr>
-            <tr><td>3:00 – 5:00 PM</td><td>👬 Teach Your Friend (Java/Python)</td><td><button class="task-status not-completed" data-task="a4">!</button></td></tr>
-            <tr><td>5:00 – 6:30 PM</td><td>🛁 Bath + 🍽️ Dinner</td><td><button class="task-status not-completed" data-task="a5">!</button></td></tr>
+            <tr><td>12:30 – 1:30 PM</td><td>Lunch + Relax</td><td><button class="task-status" data-task="a1">!</button></td></tr>
+            <tr><td>1:30 – 2:30 PM</td><td>Java Revision (programs/notes)</td><td><button class="task-status" data-task="a2">!</button></td></tr>
+            <tr><td>2:30 – 2:45 PM</td><td>Small Break</td><td><button class="task-status" data-task="a3">!</button></td></tr>
+            <tr><td>3:00 – 5:00 PM</td><td>Teach Friend (Java/Python)</td><td><button class="task-status" data-task="a4">!</button></td></tr>
+            <tr><td>5:00 – 6:30 PM</td><td>Bath + Dinner</td><td><button class="task-status" data-task="a5">!</button></td></tr>
         </tbody>
     </table>
 
     <table>
-        <caption>🌇 Evening / Night Routine</caption>
-        <thead>
-            <tr><th>Time</th><th>Activity</th><th>Status</th></tr>
-        </thead>
+        <caption>🌃 Evening / Night Routine</caption>
+        <thead><tr><th>Time</th><th>Activity</th><th>Status</th></tr></thead>
         <tbody>
-            <tr><td>6:30 – 7:30 PM</td><td>💼 Job Prep (Apply + Resume + Mock vid)</td><td><button class="task-status not-completed" data-task="e1">!</button></td></tr>
-            <tr><td>7:30 – 8:30 PM</td><td>🧪 Coding Practice (2 problems)</td><td><button class="task-status not-completed" data-task="e2">!</button></td></tr>
-            <tr><td>8:30 – 9:00 PM</td><td>📓 Notes / Flashcards / Resume touch</td><td><button class="task-status not-completed" data-task="e3">!</button></td></tr>
-            <tr><td>9:00 – 10:00 PM</td><td>📱 Free Slot / Chill / Sleep prep</td><td><button class="task-status not-completed" data-task="e4">!</button></td></tr>
+            <tr><td>6:30 – 7:30 PM</td><td>Job Prep (Apply + Resume + Mock Interview)</td><td><button class="task-status" data-task="e1">!</button></td></tr>
+            <tr><td>7:30 – 8:30 PM</td><td>Coding Practice (2 Java + 1 Python)</td><td><button class="task-status" data-task="e2">!</button></td></tr>
+            <tr><td>8:30 – 9:00 PM</td><td>Daily Notes / Flashcards / Resume Touch</td><td><button class="task-status" data-task="e3">!</button></td></tr>
+            <tr><td>9:00 – 10:00 PM</td><td>Free Time / Chill / Sleep Prep</td><td><button class="task-status" data-task="e4">!</button></td></tr>
         </tbody>
     </table>
 </section>
