@@ -1,3 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>🌞 Daily Schedule (6-Month Plan)</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0; padding: 0;
+        background-color: #d1f7c4;
+        background-image: url('file:///mnt/data/192306.jpg'); /* ✅ Replace if needed */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        opacity: 0.95;
+        text-align: center;
+    }
+    header {
+        background-color: #87ceeb;
+        color: white;
+        font-weight: bold;
+        font-size: 28px;
+        padding: 15px 0;
+        margin-bottom: 10px;
+    }
+    h2 {
+        color: #006400;
+    }
+    table {
+        margin: 0 auto 30px auto;
+        border-collapse: collapse;
+        width: 90%;
+        max-width: 700px;
+        background-color: #ffebf0;
+        border: 2px solid #000;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px 10px;
+        font-size: 18px;
+        vertical-align: middle;
+        text-align: left;
+    }
+    th {
+        background-color: #8fbc8f;
+        color: white;
+        text-align: center;
+    }
+    tr:nth-child(even) {
+        background-color: #f0fff0;
+    }
+    tr:hover {
+        background-color: #e6ffe6;
+    }
+    .task-status {
+        cursor: pointer;
+        font-size: 22px;
+        border-radius: 6px;
+        padding: 6px 12px;
+        border: none;
+        background-color: #add8e6;
+        color: #00008b;
+        transition: background-color 0.3s, color 0.3s;
+        user-select: none;
+    }
+    .task-status.completed {
+        background-color: #90ee90;
+        color: #006400;
+    }
+    #reset-button {
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        background-color: #ffb6c1;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 1000;
+        transition: background-color 0.3s;
+    }
+    #reset-button:hover {
+        background-color: #ff69b4;
+    }
+    caption {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 12px;
+        color: #006400;
+    }
+</style>
+</head>
+<body>
+
+<header>🌞 Daily Schedule (6-Month Plan)</header>
+<button id="reset-button">NEW DAY 🌅</button>
+
 <section>
     <table>
         <caption>🕖 Morning Routine</caption>
@@ -42,3 +142,57 @@
         </tbody>
     </table>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.task-status');
+
+    function updateTaskStatus() {
+        buttons.forEach(button => {
+            const taskId = button.getAttribute('data-task');
+            const status = localStorage.getItem(taskId);
+            if (status === 'completed') {
+                button.textContent = '✔';
+                button.classList.add('completed');
+                button.classList.remove('not-completed');
+            } else {
+                button.textContent = '!';
+                button.classList.add('not-completed');
+                button.classList.remove('completed');
+            }
+        });
+    }
+
+    updateTaskStatus();
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const taskId = button.getAttribute('data-task');
+            if (button.classList.contains('not-completed')) {
+                button.classList.remove('not-completed');
+                button.classList.add('completed');
+                button.textContent = '✔';
+                localStorage.setItem(taskId, 'completed');
+            } else {
+                button.classList.remove('completed');
+                button.classList.add('not-completed');
+                button.textContent = '!';
+                localStorage.setItem(taskId, 'not-completed');
+            }
+        });
+    });
+
+    document.getElementById('reset-button').addEventListener('click', () => {
+        buttons.forEach(button => {
+            button.classList.remove('completed');
+            button.classList.add('not-completed');
+            button.textContent = '!';
+            const taskId = button.getAttribute('data-task');
+            localStorage.setItem(taskId, 'not-completed');
+        });
+    });
+});
+</script>
+
+</body>
+</html>
